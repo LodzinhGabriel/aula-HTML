@@ -1,0 +1,56 @@
+body {
+    background-color: #3c3c3c;
+}
+
+.cabecalho {
+    width: 100%;
+    margin: 0px;
+}
+
+.cabecalho-texto {
+    color: white;
+    width: 100%;
+    font-size: 50px;
+    font-family: Tahoma;
+    text-align: center;
+    background-color: rgb(40, 146, 150);
+    margin: 0px;
+    
+}
+
+.cabecalho-descricao {
+    color: white;
+    font-size: 100%;
+    font-family: Tahoma;
+    text-align: center;
+    margin: 0px;
+    
+    background-color: rgb(28, 102, 104);
+}
+
+.paragrafo {
+    font-family: Tahoma;
+    color: white;
+}
+
+.titulo {
+    text-align: center;
+    margin: 10px;
+    font-family: Tahoma;
+    color: white;
+}
+
+.blocos {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blocotexto {
+    background-color: blue;
+    width: 400px;
+    height: 200px;
+    margin: 5px;
+    border-radius: 10px;
+}
