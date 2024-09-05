@@ -4,8 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exemplos de Menu</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-    
+    <h1 class="cabecalho">Página inicial</h1>
+
+    <div id="flex-centro">
+        <div class="caixa-redonda" style="width: 300px; height: 200px;">
+            <h3 class="abaixo-cabecalho" id="rotulo">Menu com listas Empilhado</h3> <br>
+            <ul>
+                <li style="color: white;">
+                    <a href="exemplos_de_menu.html" class="texto">Página inicial</a>
+                </li>
+                <li style="color: white;">
+                    <a href="contato.html" class="texto">Contato</a>
+                </li>
+                <li style="color: white;">
+                    <a href="cardapio.html" class="texto">Cardápio</a>
+                </li>
+            </ul>
+        </div>
+        <div class="caixa-redonda" style="width: 300px; height: 200px;">
+            <h3 class="abaixo-cabecalho" id="rotulo">Menu com tabela</h3> <br>
+
+            <table style="margin: 10px;">
+                <tr>
+                    <td>
+                        <a href="exemplos_de_menu.html" class="texto">Página inicial</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="contato.html" class="texto">Contato</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="cardapio.html" class="texto">Cardápio</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="caixa-redonda" style="width: 300px; height: 200px;">
+            <h3 class="abaixo-cabecalho" id="rotulo">Menu com links</h3> <br>
+            <div>
+                <a href="exemplos_de_menu.html" class="texto" style="margin-left: 10px;">Página inicial</a> |
+                <a href="contato.html" class="texto">Contato</a> |
+                <a href="cardapio.html" class="texto">Cardápio</a> 
+            </div>
+        </div>
+    </div>
 </body>
 </html>

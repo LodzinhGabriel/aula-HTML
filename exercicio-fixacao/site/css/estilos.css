@@ -20,7 +20,6 @@ body {
 }
 
 .texto {
-    background-color: rgb(219, 69, 69);
     color: white;
     font-family: Tahoma;
 }
@@ -61,6 +60,11 @@ body {
 
 #flex-centro{
     display: flex;
-    align-items: center;
-    justify-self: center;
+    justify-content: space-between;
+}
+
+#navegue {
+    position: absolute;
+    right: 25px;
+    top: 90px;
 }

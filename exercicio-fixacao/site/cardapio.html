@@ -4,8 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cardápio</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-    <div class="caixa-redonda" style="width: 300px; height: 500px;"></div>
+    <h1 class="cabecalho">Cardápio</h1>
+
+    
+
+    <div id="flex-centro">
+        <div class="caixa-redonda" style="width: 700px; height: 460px">
+
+            <p class="abaixo-cabecalho" style="margin-top: 10px;">Confira o cardápio do dia!</p> <br>
+
+            <table style="width: 680px; height: 380px; transform: translate(-50%, -50%); margin-left: 50%; margin-top: 26%;">
+                <tr style="background-color: rgb(104, 25, 25);">
+                    <th> <p class="texto">Demonstração</p> </th>
+                    <th> <p class="texto">Data</p> </th>
+                    <th> <p class="texto">Nome do prato</p> </th>
+                    <th> <p class="texto">Descrição do prato</p> </th>
+                </tr>
+                <tr style="background-color: rgb(139, 34, 34);">
+                    <th><img src="imagens/feijoada.jfif" alt="Feijoadinha" style="width: 60px; height: 60px;"></th>
+                    <th><p class="texto">19/09/2024</p></th>
+                    <th><p class="texto">Feijoadinha</p></th>
+                    <th><p class="texto">Arroz, feijoada, couve, farofa, bombom Sonho de Valsa</p></th>
+                </tr>
+                <tr style="background-color: rgb(164, 38, 38);">
+                    <th><img src="imagens/strogonoff.avif" alt="strogonoff" style="width: 60px; height: 60px;"></th>
+                    <th><p class="texto">20/09/2024</p></th>
+                    <th><p class="texto">Strogonoff de frango</p></th>
+                    <th><p class="texto">Arroz, feijão, strogonoff, farofa, bombom Sonho de Valsa</p></th>
+                </tr>
+                <tr style="background-color: rgb(192, 42, 42);">
+                    <th><img src="imagens/carnemoida.jpg" alt="carnemoida" style="width: 60px; height: 60px;"></th>
+                    <th><p class="texto">21/09/2024</p></th>
+                    <th><p class="texto">Carne moida</p></th>
+                    <th><p class="texto">Arroz, feijão, carne moida, salada de legumes, maçã</p></th>
+                </tr>
+                <tr style="background-color: rgb(221, 50, 50);">
+                    <th><img src="imagens/rabada.jfif" alt="rabada" style="width: 60px; height: 60px;"></th>
+                    <th><p class="texto">22/09/2024</p></th>  
+                    <th><p class="texto">Rabada</p></th>
+                    <th><p class="texto">Arroz, feijão, carne de boi com legumes dentro, palha italiana</p></th>                 
+                </tr>
+            </table>
+        </div>
+        <div class="caixa-redonda" id="navegue" style="width: 300px; height: 200px;">
+            <h3 class="abaixo-cabecalho" id="rotulo">Navegue</h3> <br>
+            <ul>
+                <li style="color: white;">
+                    <a href="exemplos_de_menu.html" class="texto">Página inicial</a>
+                </li>
+                <li style="color: white;">
+                    <a href="contato.html" class="texto">Contato</a>
+                </li>
+                <li style="color: white;">
+                    <a href="cardapio.html" class="texto">Cardápio</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
 </body>
 </html>
