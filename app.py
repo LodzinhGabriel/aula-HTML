@@ -1,10 +1,10 @@
-from flask import Flask # Importa o flask
+from flask import (Flask, request) # Importa o flask
 
 app = Flask(__name__) # cria uma instância
 
 @app.route("/", methods=('GET',)) # Assina uma rota
 def index(): # função responsável pela página
- nome = 'Rodrigo' # use seu nome
+ nome = request.args.get('nome') # use seu nome
  return f"""<h1>Página inicial</h1> 
     <p>Oi {nome}, Que nome bonito!</p> 
     <hr>
