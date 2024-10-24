@@ -56,6 +56,11 @@ def tabuada(num = None):
 
   return render_template('tabuada.html', num=num)
 
+@app.route("/juros")
+def juros(i: int, j: int , t: int, d: int):
+ 
+ return render_template('juros.html', i=i, j=j, t=t, d=d)
+
 
 @app.route("/galeria", methods=('GET',)) # Assina uma rota
 def galeria(): # função responsável pela página

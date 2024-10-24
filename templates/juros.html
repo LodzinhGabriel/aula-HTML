@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% block content &}
+<h1>Cálculo de juros</h1>
+<form>
+    <label>Investimento inicial: R$</label>
+    <input type="number" name="i">
+</form>
+<form>
+    <label>Juros ao ano (%): </label>
+    <input type="number" name="j">
+    <label>%</label>
+</form>
+<form>
+    <label>Tempo de Investimento (meses): </label>
+    <input type="number" name="t">
+    <label>meses</label>
+</form>
+<form>
+    <label>Depósito mensal: R$</label>
+    <input type="number" name="d">
+</form>
+<hr>
+
+{% if i and j and t and d %}
+<ul>
+    {% for v in range(0, t) %}
+    <li>Mês 1 R$: {{i + (1 + (((j / 100) / 12)) * v) + (d * v)}}</li>
+    {% endfor %}
+</ul>
+
+<hr>
+<h1>Valor final do período: R${{i + (1 + (j / 100)) + (d * t)}}</h1>
+<hr>
+{% endif %}
+
+{% end block %}
