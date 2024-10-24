@@ -1,8 +1,8 @@
-from flask import (Flask, request) # Importa o flask
+from flask import (Flask, render_template, request) # Importa o flask
 
 app = Flask(__name__) # cria uma instância
 
-@app.route("/", methods=('GET',)) # Assina uma rota
+@app.route("/sobre", methods=('GET',)) # Assina uma rota
 def index(): # função responsável pela página
  nome = request.args.get('nome') # use seu nome
  return f"""<h1>Página inicial</h1> 
@@ -10,10 +10,8 @@ def index(): # função responsável pela página
     <hr>
  """ # HTML retornado
 
-@app.route("/area", methods=('GET',)) # Assina uma rota
-def area(): # função responsável pela página
- altura = float(request.args.get('a'))  # use seu nome
- largura = float(request.args.get('l')) # use seu nome
+@app.route("/area/<float:largura>/<float:altura>", methods=('GET',)) # Assina uma rota
+def area(largura: float, altura: float): # função responsável pela página
  return f"""<h1>Area</h1> 
     <p>Altura: {altura}</p> 
     <p>Largura: {largura}</p>
@@ -21,9 +19,8 @@ def area(): # função responsável pela página
     <hr>
  """ # HTML retornado
 
-@app.route("/parimpar", methods=('GET',)) # Assina uma rota
-def parimpar(): # função responsável pela página
- numero = float(request.args.get('n'))  # use seu nome
+@app.route("/parimpar/<float:numero>", methods=('GET',)) # Assina uma rota
+def parimpar(numero: float): # função responsável pela página
  identificador = None
  if numero % 2 == 0:
   identificador = "par"
@@ -35,15 +32,25 @@ def parimpar(): # função responsável pela página
     <hr>
  """ # HTML retornado
 
-@app.route("/nomesobrenome", methods=('GET',)) # Assina uma rota
-def nomesobrenome(): # função responsável pela página
- nome = request.args.get('nome')  # use seu nome
- sobrenome = request.args.get('sobrenome') # use seu nome
+@app.route("/nomesobrenome/<string:nome>/<string:sobrenome>", methods=('GET',)) # Assina uma rota
+def nomesobrenome(nome, sobrenome): # função responsável pela página
  return f"""<h1>Citação bibliográfica do nome</h1> 
     <p>{str.upper(sobrenome)}, {str.capitalize(nome)}.</p> 
     <hr>
  """ # HTML retornado
 
+@app.route("/potencia/<float:base>/<float:expoente>")
+def potencia(base: float, expoente:float):
+  return f"""<h1>Potenciação</h1> 
+    <p>Base: {base}</p>
+    <p>Expoente: {expoente}</p>
+    <p>Resultado: {base**expoente}.</p>
+    <hr>
+"""
+
+@app.route("/tabuada/<int:num>", methods=['GET'])
+def tabuada(num: int):
+  return render_template('tabuada.html', num=num)
 
 
 @app.route("/galeria", methods=('GET',)) # Assina uma rota
