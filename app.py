@@ -47,9 +47,13 @@ def potencia(base: float, expoente:float):
     <p>Resultado: {base**expoente}.</p>
     <hr>
 """
+@app.route("/tabuada/")
+@app.route("/tabuada/<num>", methods=('GET',))
+def tabuada(num = None):
+  
+  if 'num' in request.args:
+   num = int(request.args.get('num')) 
 
-@app.route("/tabuada/<int:num>", methods=['GET'])
-def tabuada(num: int):
   return render_template('tabuada.html', num=num)
 
 
