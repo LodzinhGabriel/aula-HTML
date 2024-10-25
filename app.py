@@ -2,8 +2,12 @@ from flask import (Flask, render_template, request) # Importa o flask
 
 app = Flask(__name__) # cria uma instância
 
-@app.route("/sobre", methods=('GET',)) # Assina uma rota
-def index(): # função responsável pela página
+@app.route("/")
+def index():
+ return render_template('layout.html')
+
+@app.route("/paginainicial", methods=('GET',)) # Assina uma rota
+def paginainicial(): # função responsável pela página
  nome = request.args.get('nome') # use seu nome
  return f"""<h1>Página inicial</h1> 
     <p>Oi {nome}, Que nome bonito!</p> 
@@ -26,7 +30,7 @@ def parimpar(numero: float): # função responsável pela página
   identificador = "par"
  else:
   identificador = "impar"
- return f"""<h1>Area</h1> 
+ return f"""<h1>Par e ímpar</h1> 
     <p>Numero: {numero}</p> 
     <p>Este numero é {identificador}.</p>
     <hr>
@@ -57,9 +61,33 @@ def tabuada(num = None):
   return render_template('tabuada.html', num=num)
 
 @app.route("/juros")
-def juros(i: int, j: int , t: int, d: int):
+def juros(i = None, j = None, t = None, d = None):
+ 
+ if 'i' and 'j' and 't' and 'd' in request.args:
+   i = int(request.args.get('i'))
+   j = int(request.args.get('j'))
+   t = int(request.args.get('t'))
+   d = int(request.args.get('d'))
  
  return render_template('juros.html', i=i, j=j, t=t, d=d)
+
+@app.route("/login")
+def login(email = None, senha = None):
+ 
+ if 'email' and 'senha' in request.args:
+   email = request.args.get('email')
+   senha = request.args.get('senha')
+ 
+ return render_template('login.html', email=email, senha=senha)
+
+@app.route("/imc")
+def imc(peso = None, altura = None):
+ 
+ if 'peso' and 'altura' in request.args:
+   peso = float(request.args.get('peso'))
+   altura = int(request.args.get('altura')) / 100
+ 
+ return render_template('imc.html', peso=peso, altura=altura)
 
 
 @app.route("/galeria", methods=('GET',)) # Assina uma rota

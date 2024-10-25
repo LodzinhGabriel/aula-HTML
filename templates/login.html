@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+{% if not email == 'aluno@senai.br' and not senha == 'senai' %}
+<form>
+    <label>Email:</label> <br>
+    <input type="email" name="email" required>
+    <br> <br>
+    <label>Senha: </label> <br>
+    <input type="password" name="senha" required>
+    <br> <br>
+    <input type="submit" value="Fazer login">
+</form>
+<hr>
+{% endif %}
+
+{% if email and senha %}
+{% if email == 'aluno@senai.br' and senha == 'senai' %}
+<h1 style="color: #00ff00;">Usuário entrado com sucesso!</h1>
+<hr>
+{% else %}
+<h1 style="color: #ff0000;">Nome ou usuário incorretos.</h1>
+<hr>
+{% endif %}
+{% endif %}
+
+{% endblock %}
